@@ -11,6 +11,8 @@ const pool = new Pool({
   port: port,
   password: password,
   host: "localhost",
+  idleTimeoutMillis: 1000,
+  connectionTimeoutMillis: 1000,
 });
 
 module.exports = pool;

@@ -15,4 +15,10 @@ const pool = new Pool({
   connectionTimeoutMillis: 1000,
 });
 
-module.exports = pool;
+module.exports.dbQuery = (text, values) => {
+  return pool.query(text, values);
+};
+
+module.exports.connect = () => {
+  return pool.connect();
+};
